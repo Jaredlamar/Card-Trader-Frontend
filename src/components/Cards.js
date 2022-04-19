@@ -3,18 +3,13 @@ import React from 'react'
 function Cards({card}) {
   console.log(card)
   return (
-    <div className="wrapper">
-        <div class="card">
-            <img style={{width : "200px"}}src={card.image}/>
-            <div class="descriptions">
-                <h1>{card.card_name}</h1>
-                <h1>{card.price}</h1>
-                <h1>{card.seller_id}</h1>
-                
-                <button>
-                </button>
-            </div>
-        </div>
+    <div className="card">
+      <img src={card.image} className="card-img-top" alt="..."></img>
+      <div className="card-body">
+         <h5 className="card-title">{card.card_name}</h5>
+         <p className="card-text">${card.price}</p>
+         <a href="#" className="btn btn-primary">Buy</a>
+      </div>
     </div>
   )
 }

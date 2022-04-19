@@ -11,7 +11,7 @@ function HomePage() {
         fetch(`http://localhost:9292/cards`)
         .then( res => res.json())
         .then( data => setCards(data))
-        .catch( error => console.log(error.message));
+        .catch( error => alert("404 error"));
     },[])
 
   return (
