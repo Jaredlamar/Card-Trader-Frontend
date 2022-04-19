@@ -3,11 +3,18 @@ import React from 'react'
 function Cards({card}) {
   console.log(card)
   return (
-    <div>
-      <img src={card.image}/>
-      <p> {card.card_name}</p>
-      <p> {card.price}</p>
-      <p> {card.seller_id}</p>
+    <div className="wrapper">
+        <div class="card">
+            <img style={{width : "200px"}}src={card.image}/>
+            <div class="descriptions">
+                <h1>{card.card_name}</h1>
+                <h1>{card.price}</h1>
+                <h1>{card.seller_id}</h1>
+                
+                <button>
+                </button>
+            </div>
+        </div>
     </div>
   )
 }
