@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap"),
+
 .App {
   text-align: center;
 }
@@ -43,36 +45,136 @@
 }
 
 .header{
-  width: 40%;
+  width: 25%;
+  height: 150px;
+  padding-top: 0;
 }
+
+#header-img2 {
+  margin-left: 45em;
+}
+
+#header-div {
+  height: 175px;
+}
+
 .topnav {
-  background-color: #333;
+  align-items: center;
+  background-color: #7209b7;
   overflow: hidden;
 }
 
 
 .topnav a {
+  font-family: 'Cinzel', serif;
   float: left;
+  display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 1.5em;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1.25em;
 }
 
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: #ffd000;
+  color: #7209b7;
+  text-decoration: underline;
+  transition: 0.25s;
 }
 
 
 .topnav a.active {
-  background-color: #E3AF23;
-  color: white;
+  text-decoration: underline;
+}
+
+#background-video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+body {
+  background-color: #7209b7;
+}
+
+#welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 
+#welcome-button {
+  font-size: 3em;
+  font-family: 'Cinzel', serif;
+  color: #ffd000;
+  margin: 1em;
+  padding: 1em;
+  background-color: #7109b700;
+  border-radius: 15px;
+  border: 2px solid #ffd000;
+  transition: all 0.25s;
+}
+
+#welcome-button:hover {
+  box-shadow: 0 0.5em 1em -0.4em #ffd000;
+  transform: translateY(-0.2em);
+  background-color: #ffe169;
+  color: white;
+}
+
+.card {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  max-width: 500px;
+}
+
+.card-body {
+  background-color: #7209b7;
+  border-radius: 10px;
+  color: #ffe169;
+}
+
+.card-title {
+  font-size: 2em;
+}
+
+.card-text {
+  font-size: 2em;
+}
+
+#card-btn {
+  font-size: 1.25em;
+  font-family: 'Cinzel', serif;
+  color: #ffd000;
+  margin-bottom: .5em;
+  background-color: #7109b700;
+  border-radius: 15px;
+  border: 2px solid #ffd000;
+  transition: all 0.25s;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+} 
+
+#card-btn:hover {
+  box-shadow: 0 0.5em 1em -0.4em #ffd000;
+  transform: translateY(-0.2em);
+  background-color: #ffe169;
+  color: white;
+}
+
+#please-work-div {
+  padding-left: 8em;
+}
 
 
 

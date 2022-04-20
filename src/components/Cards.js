@@ -10,7 +10,7 @@ function Cards({card}) {
       <div className="card-body">
          <h5 className="card-title">{card.card_name}</h5>
          <p className="card-text">${card.price}</p>
-         <a href="#" className="btn btn-primary">Buy</a>
+         <a id="card-btn" href="#" className="btn btn-primary">Buy</a>
       </div>
     </div>
   )

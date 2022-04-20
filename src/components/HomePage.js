@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import Header from './Header'
 import CardContainer from './CardContainer'
 import React from 'react'
+import video2 from "./yugioh.mov"
 
 function HomePage() {
     const [cards,setCards]=useState([])
@@ -18,7 +19,9 @@ function HomePage() {
     <>
     <div><Header/></div>
     <div><NavBar /></div>
+    <video src={video2} autoPlay loop muted id="background-video"></video>
     <div><CardContainer cards={cards}/></div>
+    
     </>
   )
 }
