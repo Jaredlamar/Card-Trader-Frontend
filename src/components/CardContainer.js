@@ -3,9 +3,9 @@ import Cards from './Cards'
 
 
 
-function CardContainer({cards}) {
+function CardContainer({cards, setSelectedCard, selectedCard}) {
   const renderedCards = cards.map(card=>{
-    return <Cards key={card.id} card={card}/>
+    return <Cards setSelectedCard={setSelectedCard} key={card.id} card={card} selectedCard={selectedCard}/>
   })
 
   // console.log("keys: ", renderedCards)
@@ -28,17 +28,17 @@ function CardContainer({cards}) {
 
   return (
     <div id="please-work-div">
-    <div id="card-container" className="container">
-      <div className="row">
-        <div className="col-6">
-          {realFirstHalf}
-        </div>
+      <div id="card-container" className="container">
+        <div className="row">
+          <div className="col-6">
+           {realFirstHalf}
+          </div>
       
-        <div id="second-column" className="col-6">
-          {realSecondHalf}
+          <div id="second-column" className="col-6">
+            {realSecondHalf}
+          </div>
         </div>
-        </div>
-    </div>
+      </div>
     </div>
   )
 }

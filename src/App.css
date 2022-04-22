@@ -62,13 +62,13 @@
   align-items: center;
   background-color: #7209b7;
   overflow: hidden;
+  padding: 1.75em;
 }
 
 
 .topnav a {
   font-family: 'Cinzel', serif;
-  float: left;
-  display: block;
+  display: inline;
   color: #f2f2f2;
   text-align: center;
   padding: 1.5em;
@@ -133,9 +133,21 @@ body {
 }
 
 .card {
+  margin-top: 2em;
   font-family: 'Cinzel', serif;
   text-align: center;
   max-width: 500px;
+}
+
+.sold-card-body {
+  background-color: rgba(128, 128, 128, 0.687);
+  border-radius: 10px;
+  color: gray;
+}
+
+#sold-header {
+  color: red;
+  font-size: 3em
 }
 
 .card-body {
@@ -152,7 +164,7 @@ body {
   font-size: 2em;
 }
 
-#card-btn {
+.btn-btn-primary {
   font-size: 1.25em;
   font-family: 'Cinzel', serif;
   color: #ffd000;
@@ -163,9 +175,10 @@ body {
   transition: all 0.25s;
   padding-left: 1.5em;
   padding-right: 1.5em;
-} 
+}
 
-#card-btn:hover {
+
+.btn-btn-primary:hover {
   box-shadow: 0 0.5em 1em -0.4em #ffd000;
   transform: translateY(-0.2em);
   background-color: #ffe169;
@@ -176,5 +189,148 @@ body {
   padding-left: 8em;
 }
 
+#sell-header {
+  color: #f2f2f2;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 1.5em;
+  font-size: 2.5em;
+}
 
+#card-listed-header {
+  color: #ffd000;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 1.5em;
+  font-size: 2.5em;
+}
 
+.sell-form {
+  /* text-align: center; */
+  background-color: #f2f2f2;
+  max-width: 40%;
+  border-radius: 15px;
+  margin-left: 27em;
+  margin-bottom: 3em;
+}
+
+.form-input {
+  display: block;
+  margin-left: 12em;
+  padding: .5em;
+  border-radius: 10px;
+}
+
+.form-text {
+  margin-left: 6em;
+  display: block;
+  padding-top: 2em;
+  padding-left: 2em;
+  font-size: 1.5em;
+  color: #7209b7;
+  font-family: 'Cinzel', serif;
+}
+
+.form-btn {
+  display: block;
+  margin-top: 3em;
+  padding: 1em;
+  font-size: 1.5em;
+  font-family: 'Cinzel', serif;
+  color: #ffd000;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  border: 1px solid #ffd000;
+  transition: all 0.25s;
+}
+
+#sell-card-btn {
+  margin-left: 8em;
+}
+
+.form-btn:hover {
+  background-color: #ffe169;
+  color: white;
+}
+
+.background-header-video {
+  max-height: 150px;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.buy-form {
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  max-height: 500px;
+  margin-left: 7em;
+  margin-top: 4.5em;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  max-width: 500px;
+}
+
+.buy-form-text {
+  display: block;
+  padding-top: 1em;
+  font-size: 1.25em;
+  color: #7209b7;
+  font-family: 'Cinzel', serif;
+}
+
+.buy-form-input {
+  margin-left: 10em;
+  display: block;
+  padding: .5em;
+  border-radius: 10px;
+}
+
+#buy-btn {
+  margin-top: 0px;
+  display: block;
+  margin-top: 3em;
+  padding: .5em;
+  font-size: 1.5em;
+  font-family: 'Cinzel', serif;
+  color: #ffd000;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  border: 1px solid #ffd000;
+  transition: all 0.25s;
+  margin-left: 6.25em;
+}
+
+#buy-btn:hover {
+  background-color: #ffe169;
+  color: white;
+}
+
+.checkout-header {
+  font-family: 'Cinzel', serif;
+  font-size: 2em;
+  color: #ffd000;
+}
+
+#checkout-img {
+  height: 380px;
+}
+
+.disabled-btn {
+  color: grey;
+  font-size: 1.25em;
+  font-family: 'Cinzel', serif;
+  margin-bottom: .5em;
+  background-color: #7109b700;
+  border-radius: 15px;
+  border: 2px solid grey;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}

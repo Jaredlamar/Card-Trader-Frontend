@@ -1,7 +1,12 @@
 import React from "react";
-import { useState } from "react"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import NavBar from "./NavBar";
+import VideoHeader from "./VideoHeader";
 
 function SellerForm() {
+
+  let navigate = useNavigate()
 
   ///SETTING STATE///
 
@@ -17,6 +22,8 @@ function SellerForm() {
       buyer_id: null,
       seller_id: null
   })
+
+  const [toggleH2, setToggleH2] = useState(true)
 
 
   ///TOGGLING FORMS///
@@ -40,29 +47,12 @@ function SellerForm() {
 
   function handleSellerFormSubmit(e) {
     e.preventDefault()
-  //   console.log("submitted")
-  //  fetch("http://localhost:9292/seller"`, {
-  //      method: "POST",
-  //      headers: {
-  //          "Content-Type": "application/json",
-  //          Accept: "application/json"
-  //      },
-  //      body: JSON.stringify({
-  //          name: sellerFormState.name,
-  //          phone_number: sellerFormState.phone_number
-  //      })
-  //  })
-  //  .then( res => res.json())
-  //  .then( data => setSellerFormState({...sellerFormState, data}))
-  //  .catch( error => console.log(error.message));
     toggleForm()
   }
 
 
 
   ////CARD FORM/////
-
-
 
   function handleCardInputChange(e) {
     const newCardFormState = {...cardFormState, [e.target.name]: e.target.value}
@@ -84,34 +74,46 @@ function SellerForm() {
        })
    })
    .then( res => res.json())
-   .then( data => console.log(data))
+   .then( data => setCardFormState(data))
    .catch( error => console.log(error.message));
-    console.log("submitted")
+   setCardFormState({
+     card_name: "",
+     image: "",
+     price: 0,
+     buyer_id: null,
+     seller_id: null
+    })
+    setToggleH2(() => !toggleH2)
   }
-
-
 
   return (
     <div>
-      <h2>Sell Your Yu-Gi-Oh Card!</h2>
+      <VideoHeader />
+      <NavBar />
+      {toggleH2 ? <h2 id="sell-header">SELL YOUR YU-GI-OH CARD!</h2> : <h2 id="card-listed-header">YOUR CARD HAS BEEN LISTED SUCCESSFULLY!<br></br>PLEASE NAVIGATE HOME TO VIEW YOUR LISTING</h2>}
+      {/* <h2 id="sell-header">SELL YOUR YU-GI-OH CARD!</h2> */}
       {toggle ? 
-      <form onSubmit={handleSellerFormSubmit}>
-        <label for="name-input">Your Name:</label>
-        <input id="name-input" type="text" name="name" placeholder="Your Name" onChange={handleSellerInputChange} value={sellerFormState.name}></input>
-        <label for="phone-input">Your Phone Number:</label>
-        <input id="phone-input" type="text" name="phone_number" placeholder="Your Phone Number" onChange={handleSellerInputChange} value={sellerFormState.phone_number}></input>
-        <button type="submit">Submit</button>
+      <form className="sell-form" onSubmit={handleSellerFormSubmit}>
+        <div className="row">
+          <div className="col">
+            <label className="form-text" htmlFor="name-input">Your Name:</label>
+            <input id="name-input" className="form-input" type="text" name="name" placeholder="Your Name" onChange={handleSellerInputChange} value={sellerFormState.name}></input>
+            <label className="form-text" htmlFor="phone-input">Your Phone Number:</label>
+            <input id="phone-input" className="form-input" type="text" name="phone_number" placeholder="Your Phone Number" onChange={handleSellerInputChange} value={sellerFormState.phone_number}></input>
+          </div>
+          <button type="submit" className="form-btn">Continue</button>
+        </div>
       </form> 
       : 
       <>
-      <form onSubmit={handleCardFormSubmit}>
-        <label for="card-name-input">Card Name:</label>
-        <input id="card-name-input" type ="text" name="card_name" placeholder="Card Name" onChange={handleCardInputChange} value={cardFormState.card_name}></input>
-        <label for="image-input">Image:</label>
-        <input id="image-input" type ="text" name="image" placeholder="Image" onChange={handleCardInputChange} value={cardFormState.image}></input>
-        <label for="price-input">Price:</label>
-        <input id="price-input" type ="number" name="price" placeholder="Price" onChange={handleCardInputChange} value={cardFormState.price}></input>
-        <button type="submit">List your card!</button>
+      <form className="sell-form" onSubmit={handleCardFormSubmit}>
+        <label className="form-text" htmlFor="card-name-input">Card Name:</label>
+        <input id="card-name-input" className="form-input" type ="text" name="card_name" placeholder="Card Name" onChange={handleCardInputChange} value={cardFormState.card_name}></input>
+        <label className="form-text" htmlFor="image-input">Image:</label>
+        <input id="image-input" className="form-input" type ="text" name="image" placeholder="Image" onChange={handleCardInputChange} value={cardFormState.image}></input>
+        <label className="form-text" htmlFor="price-input">Price:</label>
+        <input id="price-input" className="form-input" type ="number" name="price" placeholder="Price" onChange={handleCardInputChange} value={cardFormState.price}></input>
+        <button id="sell-card-btn" type="submit" className="form-btn">List your card!</button>
       </form>
       </>
       }
