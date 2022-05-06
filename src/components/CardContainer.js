@@ -3,12 +3,10 @@ import Cards from './Cards'
 
 
 
-function CardContainer({cards, setSelectedCard, selectedCard}) {
+function CardContainer({cards, setSelectedCard, selectedCard, bid, setBid}) {
   const renderedCards = cards.map(card=>{
-    return <Cards setSelectedCard={setSelectedCard} key={card.id} card={card} selectedCard={selectedCard}/>
+    return <Cards setSelectedCard={setSelectedCard} key={card.id} card={card} selectedCard={selectedCard} bid={bid} setBid={setBid}/>
   })
-
-  // console.log("keys: ", renderedCards)
 
   const allCards = renderedCards.map((card) => {
     return card

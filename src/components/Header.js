@@ -1,5 +1,4 @@
 import React from 'react'
-import soldImg from "./soldimg.png"
 
 function Header() {
   return (

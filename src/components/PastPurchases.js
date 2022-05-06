@@ -7,9 +7,6 @@ import NavBar from './NavBar'
 
 function PastPurchases({purchasedCard, handleDelete}) {
 
-
-  console.log("from purchases: ", purchasedCard)
-
   const mappedPurchases = purchasedCard.map((pCard) => {
 
    return <PurchasedCards key={pCard.id} pCard={pCard} handleDelete={handleDelete} />

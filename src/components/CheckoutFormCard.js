@@ -6,7 +6,6 @@ function CheckoutFormCard({displayedCard}) {
 
     return (
         <>
-        {/* <h2>P U R C H A S E</h2> */}
         <div id="checkout-card" className="card">
             <img src={displayedCard.image} className="card-img-top" id="checkout-img" alt="..."></img>
             <div className="card-body">

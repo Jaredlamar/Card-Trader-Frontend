@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import video from "./yu-gi-oh.mp4";
 import video2 from "./yugioh.mov"
 
 function WelcomePage() {

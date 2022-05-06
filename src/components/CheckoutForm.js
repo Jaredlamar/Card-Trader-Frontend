@@ -11,9 +11,6 @@ function CheckoutForm ({selectedCard, displayedCard, setDisplayedCard, setToggle
 
   let navigate = useNavigate();
 
-  
-  // const [displayedCard, setDisplayedCard] = useState({})
-
 
 
   

@@ -1,29 +1,25 @@
 import React from 'react';
-import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import soldImg from "./soldimg.png"
 
 
 
-function Cards({card, setSelectedCard, selectedCard}) {
+
+function Cards({card, setSelectedCard, selectedCard, bid, setBid}) {
 
   let navigate = useNavigate();
 
-  // function handleBuyClick(e) {
-  //   let myCard = e.target.id
-  //   setSelectedCard(myCard)
-    
-    
-  //   console.log(myCard)
-  //   // navigate("/checkout")
-  // }
-
   function handleBuyClick() {
-    // console.log("from cards:" ,card.id)
     setSelectedCard(selectedCard = card.id)
     navigate(`/checkout`);
   }
+  
 
+  function handleBidClick() {
+    setBid(bid = card.id)
+    navigate("/bid")
+  }
+
+  
 
   
   return (
@@ -45,7 +41,14 @@ function Cards({card, setSelectedCard, selectedCard}) {
     <img src={card.image} className="card-img-top" alt="..."></img>
     <div className="card-body">
        <h5 className="card-title">{card.card_name}</h5>
-       <p className="card-text">${card.price}</p>
+       <p id="card-price" className="card-text">Price: ${card.price}</p>
+      
+        {card.bid1 ? <p className="card-text">Bid: ${card.bid1}</p> : null}
+        {card.bid2 ? <p className="card-text">Bid: ${card.bid2}</p> : null}
+        {card.bid3 ? <p className="card-text">Bid: ${card.bid3}</p> : null}
+
+       
+       <button onClick={handleBidClick} id={card.id} href="/checkout" className="btn-btn-primary">Bid</button>
        <button onClick={handleBuyClick} id={card.id} href="/checkout" className="btn-btn-primary">Buy</button>
     </div>
   </div>}

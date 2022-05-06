@@ -6,8 +6,6 @@ import VideoHeader from "./VideoHeader";
 
 function SellerForm() {
 
-  let navigate = useNavigate()
-
   ///SETTING STATE///
 
   const [sellerFormState, setSellerFormState] = useState({
@@ -91,7 +89,6 @@ function SellerForm() {
       <VideoHeader />
       <NavBar />
       {toggleH2 ? <h2 id="sell-header">SELL YOUR YU-GI-OH CARD!</h2> : <h2 id="card-listed-header">YOUR CARD HAS BEEN LISTED SUCCESSFULLY!<br></br>PLEASE NAVIGATE HOME TO VIEW YOUR LISTING</h2>}
-      {/* <h2 id="sell-header">SELL YOUR YU-GI-OH CARD!</h2> */}
       {toggle ? 
       <form className="sell-form" onSubmit={handleSellerFormSubmit}>
         <div className="row">
